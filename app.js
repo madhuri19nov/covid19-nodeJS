@@ -97,7 +97,7 @@ app.get("/districts/:districtId/", async (request, response) => {
 
 app.delete("/districts/:districtId/", async (request, response) => {
   const { districtId } = request.params;
-  const deleteDistrictDetails = `DELETE * FROM district WHERE district_id= ${districtId}`;
+  const deleteDistrictDetails = `DELETE FROM district WHERE district_id= ${districtId}`;
   await db.run(deleteDistrictDetails);
 
   response.send("District Removed");
